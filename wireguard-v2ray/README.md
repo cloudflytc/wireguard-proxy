@@ -1,3 +1,4 @@
+```
 docker run -it --rm --cap-add=NET_ADMIN \
      --privileged \
     --name wireguard-v2ray \
@@ -5,3 +6,4 @@ docker run -it --rm --cap-add=NET_ADMIN \
     --volume /etc/v2ray:/etc/v2ray \
     -p 映射端口:配置文件内设置的端口 \
     cloudfly23/wireguard-proxy-v2ray
+```
