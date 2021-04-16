@@ -1,5 +1,5 @@
 ```
-docker run -it --rm --cap-add=NET_ADMIN \
+docker run -d --restart=always --cap-add=NET_ADMIN \
      --privileged \
     --name wireguard-v2ray \
     --volume /etc/wireguard/:/etc/wireguard/:ro \
