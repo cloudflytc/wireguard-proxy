@@ -9,7 +9,6 @@ FROM alpine:latest
 LABEL maintainer="cloudfly23"
 
 COPY v2ray.sh /root/v2ray.sh
-COPY config.json /etc/v2ray/config.json
 COPY ./entrypoint.sh /root/entrypoint.sh
 COPY ./check.sh /root/check.sh
 
