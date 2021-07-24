@@ -2,6 +2,8 @@
 
 set -e
 
+crond
+
 ifname=$(basename $(ls -1 /etc/wireguard/*.conf | head -1) .conf)
 wg-quick up /etc/wireguard/$ifname.conf
 
