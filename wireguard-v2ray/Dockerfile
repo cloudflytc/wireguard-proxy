@@ -31,7 +31,7 @@ RUN set -ex \
 
 RUN chmod +x /root/entrypoint.sh
 RUN chmod +x /root/check.sh
-RUN crond
+
 
 VOLUME /etc/v2ray
 ENV TZ=Asia/Shanghai
