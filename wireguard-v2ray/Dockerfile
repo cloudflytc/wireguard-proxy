@@ -31,6 +31,7 @@ RUN set -ex \
 
 RUN chmod +x /root/entrypoint.sh
 RUN chmod +x /root/check.sh
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 
 VOLUME /etc/v2ray
