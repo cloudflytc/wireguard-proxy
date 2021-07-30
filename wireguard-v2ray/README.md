@@ -4,7 +4,8 @@
 ## 项目特点：
 1.自带监控脚本，检查docker内网络状况，判断wireguard链接状态，出问题快速重连  
 2.全局使用wireguard，无需动机器的路由，有效防止机器因为wireguard配置问题失联  
-3.内置了 jq speedtest-cli 可以直接运行流媒体检测脚本和测速
+3.内置了 jq speedtest-cli 可以直接运行流媒体检测脚本和测速  
+4.支持python3
 
 
   
