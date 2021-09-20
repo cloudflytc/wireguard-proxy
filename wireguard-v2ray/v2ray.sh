@@ -7,38 +7,37 @@
 # Reference URL:
 # https://github.com/v2fly/v2ray-core.git
 
-PLATFORM=$1
-if [ -z "$PLATFORM" ]; then
-    ARCH="amd64"
-else
-    case "$PLATFORM" in
-        linux/386)
-            ARCH="386"
-            ;;
-        linux/amd64)
-            ARCH="amd64"
-            ;;
-        linux/arm/v6)
-            ARCH="arm6"
-            ;;
-        linux/arm/v7)
-            ARCH="arm7"
-            ;;
-        linux/arm64|linux/arm64/v8)
-            ARCH="arm64"
-            ;;
-        linux/ppc64le)
-            ARCH="ppc64le"
-            ;;
-        linux/s390x)
-            ARCH="s390x"
-            ;;
-        *)
-            ARCH=""
-            ;;
-    esac
-fi
-[ -z "${ARCH}" ] && echo "Error: Not supported OS Architecture" && exit 1
+sys_bit=$(uname -m)
+
+case $sys_bit in
+i[36]86)
+        ARCH="386"
+        caddy_arch="386"
+        ;;
+'amd64' | x86_64)
+        ARCH="amd64"
+        caddy_arch="amd64"
+        ;;
+*armv6*)
+        ARCH="arm6"
+        caddy_arch="arm6"
+        ;;
+*armv7*)
+        ARCH="arm7"
+        caddy_arch="arm7"
+        ;;
+*aarch64* | *armv8*)
+        ARCH="arm64"
+        caddy_arch="arm64"
+        ;;
+*)
+        echo -e " 
+        哈哈……这个 ${red}辣鸡脚本${none} 不支持你的系统。 ${yellow}(-_-) ${none}
+
+        备注: 仅支持 Ubuntu 16+ / Debian 8+ / CentOS 7+ 系统
+        " && exit 1
+        ;;
+esac
 # Download binary file
 V2RAY_FILE="v2ray_linux_${ARCH}"
 V2CTL_FILE="v2ctl_linux_${ARCH}"
