@@ -40,7 +40,6 @@ i[36]86)
 esac
 # Download binary file
 V2RAY_FILE="v2ray_linux_${ARCH}"
-V2CTL_FILE="v2ctl_linux_${ARCH}"
 
 echo "Downloading binary file: ${V2RAY_FILE}"
 wget -O /usr/bin/v2ray https://dl.lamp.sh/files/${V2RAY_FILE} > /dev/null 2>&1
@@ -49,11 +48,5 @@ if [ $? -ne 0 ]; then
 fi
 echo "Download binary file: ${V2RAY_FILE} completed"
 
-echo "Downloading binary file: ${V2CTL_FILE}"
-wget -O /usr/bin/v2ctl https://dl.lamp.sh/files/${V2CTL_FILE} > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-    echo "Error: Failed to download binary file: ${V2CTL_FILE}" && exit 1
-fi
-echo "Download binary file: ${V2CTL_FILE} completed"
 chmod +x /usr/bin/v2ray
-chmod +x /usr/bin/v2ctl
+
