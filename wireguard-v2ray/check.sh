@@ -3,6 +3,7 @@ if [ "$pingtime"x = "301"x ];then
     echo "解锁netflix成功"
 elif [ "$pingtime"x = "200"x ];then
     echo "解锁美国成功"
+i=1
 else
     while :
     do
@@ -36,6 +37,10 @@ else
         else
             echo $ip
             echo "解锁失败"
+            i=$[$i+1]
+            if [ $i -gt 5 ];then
+                break
+            fi
             sleep 5
         fi
     done
