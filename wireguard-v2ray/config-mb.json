@@ -40,22 +40,7 @@
                 "ota": false
             }
         }
-		//include_socks
-		,
-        {
-            "protocol": "mtproto",
-            "port": 3389,
-            "tag": "tg-in",
-            "settings": {
-                "users": [
-                    {
-                        "secret": "ddfd3b171d83ae368f3471aa2642fda5"
-                    }
-                ]
-            }
-        }
-		//include_in_config
-		//
+        
 	],
 	"outbounds": [
 		{
@@ -69,14 +54,7 @@
 			"protocol": "blackhole",
 			"settings": {},
 			"tag": "blocked"
-        },
-		{
-			"protocol": "mtproto",
-			"settings": {},
-			"tag": "tg-out"
-		}
-		//include_out_config
-		//
+        }
 	],
 	"dns": {
 		"servers": [
@@ -155,9 +133,6 @@
                     ],
                     "outboundTag": "blocked"
                 }
-			//include_ban_ad
-			//include_rules
-			//
 		]
 	},
 	"transport": {
